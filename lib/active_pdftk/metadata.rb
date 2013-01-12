@@ -5,7 +5,7 @@ module ActivePdftk
   class MetaData < Hash
 
     def number_of_pages
-      self["NumberOfPages"]
+      self["NumberOfPages"].to_i
     end
 
     def author
