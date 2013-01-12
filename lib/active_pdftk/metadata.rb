@@ -12,6 +12,18 @@ module ActivePdftk
       self["Author"]
     end
 
+    def creator
+      self["Creator"]
+    end
+
+    def producer
+      self["Producer"]
+    end
+
+    def title
+      self["Title"]
+    end
+
     def mod_date
       parse_date self["ModDate"]
     end
