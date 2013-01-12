@@ -11,7 +11,7 @@ as it's not a published Gem put this in your Gemfile
 
   gem 'active_pdftk', :git => 'git@github.com:koenhandekyn/active_pdftk.git'
 
-== MetaDataParser [ original Readme ]
+== MetaDataParser
 
 The below example illustrates usage of the meta data parser extention. It uses dump_data
 to dump the raw data from the PDF and parses that output.
@@ -33,7 +33,7 @@ It should work both with a file reference as well with a stream reference.
 This is an alternative to https://github.com/yob/pdf-reader.
 TODO : performance comparison.
 
-= ActivePdftk
+= ActivePdftk [ original Readme ]
 
 This gem is intended to be a wrapper for the PDFTK command line utility for working with pdfs, mainly editable pdfs.
 
