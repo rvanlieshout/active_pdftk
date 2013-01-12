@@ -51,7 +51,6 @@ module ActivePdftk
     def parse(input)
       raw_data = @pdftk.dump_data(input)
       lines = raw_data.read.split("\n")
-      puts lines
       meta_data = MetaData.new
       new_key = nil
       lines.each do |line|
@@ -66,7 +65,6 @@ module ActivePdftk
             meta_data[key] = value unless value.nil?
         end 
       end
-      puts meta_data
       meta_data
     end
 
