@@ -1,7 +1,11 @@
 require 'date'
 
+# a module that handles the parsing of pdftk's dump_dat
+#
 module ActivePdftk
 
+  # a hash that has some utility accessor methods to retreive
+  # the key fields from the PDF metadata as typed values (string,int,datatime)
   class MetaData < Hash
 
     def number_of_pages
@@ -42,6 +46,16 @@ module ActivePdftk
 
   end
 
+  # the parser module that parses an input (fileref, stringio) and
+  # returns a MetaData object (special kind of hash).
+  # the resulting hash typicalle contains values for 
+  # - Author
+  # - Producer
+  # - Creator
+  # - Title
+  # - ModDate
+  # - CreationDate
+  # - NumberOfPages
   class MetaDataParser
 
     def initialize
@@ -57,6 +71,7 @@ module ActivePdftk
         key, value = line.split(": ")
         case key
           when "InfoBegin"
+            # do nothing
           when "InfoKey"
             new_key = value
           when "InfoValue"
