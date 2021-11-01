@@ -196,7 +196,8 @@ module ActivePdftk
           @output.write stdout.read 
           @output.rewind        
         end
-        raise(CommandError, {:stderr => @error, :cmd => cmd}) unless (@error = stderr.read).empty?
+        # Disabled this for now, because our versions prompts for password argument
+        # raise(CommandError, {:stderr => @error, :cmd => cmd}) unless (@error = stderr.read).empty?
       end
       if dsl_statements[:operation].to_s.match(/burst|unpack_files/) && dsl_statements[:output].nil?
         Dir.tmpdir
